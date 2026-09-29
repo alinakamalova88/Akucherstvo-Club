@@ -1,0 +1,4 @@
+---
+const {question,answer}=Astro.props;
+---
+<details class="faq-item"><summary>{question}<span>+</span></summary><div class="answer">{answer}<slot/></div></details>

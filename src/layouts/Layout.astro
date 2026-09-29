@@ -1,0 +1,8 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import SEO from '../components/SEO.astro';
+const {title,description='Бережная подготовка к родам, знакомство с акушерками и доулами, поддержка вашего выбора.'}=Astro.props;
+---
+<!doctype html><html lang="ru"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#f8f5ee"/><SEO title={title} description={description}/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/></head><body><a class="skip-link" href="#main">К содержимому</a><Header/><main id="main"><slot/></main><Footer/></body></html>

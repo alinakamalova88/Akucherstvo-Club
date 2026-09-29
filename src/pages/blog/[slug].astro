@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import {getCollection,render} from 'astro:content';
+export async function getStaticPaths(){return (await getCollection('blog')).map(post=>({params:{slug:post.id},props:{post}}));}
+const {post}=Astro.props;
+const {Content}=await render(post);
+---
+<Layout title={post.data.title} description={post.data.description}><PageIntro title={post.data.title} eyebrow={post.data.category} description={post.data.description}/><article class="prose"><p class="small">{post.data.pubDate.toLocaleDateString('ru-RU')} · Статья для знакомства с темой</p><Content/><a class="text-link" href="/blog/">← Все статьи</a></article><div class="container"><ContactForm/></div></Layout>

@@ -1,0 +1,4 @@
+---
+const {role,name,age,years,approach,experience}=Astro.props;
+---
+<article class="profile"><div><img src="https://placehold.co/360x440/e7ebdf/536b50?text=Photo" alt={`Место для фотографии: ${role}`} width="360" height="440" loading="lazy"/><p class="caption">Фотография будет добавлена</p></div><div><span class="badge">Образец анкеты · вымышленный профиль</span><h2>{name}</h2><p>{role} · {age} лет · стаж {years} лет</p><dl><dt>Опыт</dt><dd>{experience}</dd><dt>Подход</dt><dd>{approach}</dd><dt>Роддом</dt><dd>Будет указан после подтверждения сотрудничества.</dd><dt>Квалификация</dt><dd>Данные об образовании и сертификатах будут добавлены вместе с реальным профилем.</dd></dl><a class="button" href="#">Анкета записи на встречу ↗</a></div></article>

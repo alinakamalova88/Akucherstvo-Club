@@ -1,0 +1,26 @@
+<section class="container section birth-story" aria-labelledby="birth-story-title">
+  <div class="birth-story-player">
+    <video controls playsinline preload="metadata" aria-label="История родов Кати" aria-describedby="birth-story-description">
+      <source src="/videos/birth-story-katya.mp4" type="video/mp4" />
+      Ваш браузер не поддерживает видео. <a href="/videos/birth-story-katya.mp4">Открыть видео</a>.
+    </video>
+  </div>
+  <div>
+    <p class="eyebrow">ИСТОРИИ AKUSHERSTVO CLUB</p>
+    <h2 id="birth-story-title">На одном дыхании —<br/>и в воду!</h2>
+    <p id="birth-story-description" class="large-copy">Буквально за несколько часов от начала схваток — без стимуляции, без обезболивания. На дыхании. В потоке. Амамс Катя родила в воду прекрасную девчонку 🩷</p>
+    <p>Приходи на акушерство_посиделки офлайн каждую среду или подключайся к эфиру каждый четверг в 19:00 и знакомься с акушерками и доулами проекта.</p>
+    <a class="button" href="/events/">Акушерство_посиделки <span>↗</span></a>
+    <p class="small birth-story-note">Каждая история родов индивидуальна. Формат родов и медицинская помощь подбираются вместе с командой.</p>
+  </div>
+</section>
+<style>
+  .birth-story{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:70px;align-items:center}
+  .birth-story-player{background:var(--pink);border-radius:24px;padding:18px;display:flex;justify-content:center}
+  video{display:block;width:100%;max-height:620px;aspect-ratio:9/16;object-fit:contain;background:#232922;border-radius:15px}
+  .birth-story-note{margin-top:22px;max-width:470px}
+  @media(max-width:650px){.birth-story{grid-template-columns:1fr;gap:28px}.birth-story-player{padding:12px}video{max-height:570px}.birth-story h2{font-size:34px}}
+</style>
+
+
+

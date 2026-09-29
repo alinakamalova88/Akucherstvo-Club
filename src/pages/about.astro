@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageIntro from '../components/PageIntro.astro';
+import ContactForm from '../components/ContactForm.astro';
+import ServicePhoto from '../components/ServicePhoto.astro';
+import {services} from '../data/services.js';
+import CaseCard from '../components/CaseCard.astro';
+---
+<Layout title="О нас"><PageIntro title="Место, где вас слышат" eyebrow="О НАС" description="Akusherstvo Club — пространство бережной поддержки женщины на пути к материнству."/><section class="container content-section"><div class="split-content"><div><h2>Рядом с женщиной.<br/>На стороне её выбора.</h2><p>Мы объединяем идею профессионального сопровождения и простую человеческую заботу. Помогаем разобраться в подготовке к родам, сформулировать пожелания и познакомиться со специалистами.</p><p>В центре нашего подхода — ваши потребности, уважительное общение и сотрудничество с медицинской командой. Можно волноваться, задавать вопросы и менять решение.</p><a class="button" href="/specialists/">Познакомиться со специалистами ↗</a></div><figure><ServicePhoto service={services.find(s=>s.id==='midwife-birth')}/><figcaption class="caption">Команда Akusherstvo Club. Новая фотография из предоставленной карточки клуба.</figcaption></figure></div><div class="three-grid about-principles"><CaseCard title="Понять" text="Простыми словами объясняем форматы поддержки и помогаем подготовить вопросы врачу."/><CaseCard title="Выбрать" text="Знакомим с ролью акушерки и доулы, чтобы вы могли найти подходящего специалиста."/><CaseCard title="Почувствовать опору" text="Создаём пространство для спокойного разговора о родах и первых днях с малышом."/></div></section><div class="container"><ContactForm/></div></Layout>

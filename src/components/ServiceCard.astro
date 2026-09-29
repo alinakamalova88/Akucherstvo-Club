@@ -1,0 +1,4 @@
+---
+const {number,title,text,href,tone='sage'}=Astro.props;
+---
+<a class:list={['service-card',tone]} href={href}><span class="card-number">{number} /</span><h3>{title}</h3><p>{text}</p><span class="card-link">Узнать больше <span>↗</span></span></a>

@@ -1,0 +1,9 @@
+---
+const links = [['/','Главная'],['/about/','О нас'],['/services/','Услуги'],['/specialists/','Специалисты'],['/hospitals/','Роддома'],['/events/','Акушерство_посиделки'],['/cases/','Отзывы'],['/faq/','Вопросы'],['/blog/','Блог'],['/contacts/','Контакты'],['/directions/','Проезд']];
+---
+<header class="header"><div class="header-inner"><a class="brand" href="/" aria-label="Akusherstvo Club — главная"><img class="brand-logo" src="/images/logo.png" alt="Логотип клуба" width="200" height="164"/><span>Akusherstvo Club<span class="brand-sub">CLUB · БЕРЕЖНО К ВАМ</span></span></a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Меню <span>☰</span></button><nav id="navigation" aria-label="Основная навигация">{links.map(([href,label])=><a href={href} aria-current={Astro.url.pathname===href || (href!=='/' && Astro.url.pathname.startsWith(href)) ? 'page':undefined}>{label}</a>)}</nav><a class="header-cta" href="#">Встретимся? <span>↗</span></a></div></header>
+<script>const button=document.querySelector('.menu-toggle');button?.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));document.querySelector('#navigation')?.classList.toggle('is-open',!open);});</script>
+
+
+
+

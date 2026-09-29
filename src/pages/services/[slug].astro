@@ -1,0 +1,10 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageIntro from '../../components/PageIntro.astro';
+import ContactForm from '../../components/ContactForm.astro';
+import ServicePhoto from '../../components/ServicePhoto.astro';
+import {services} from '../../data/services.js';
+export function getStaticPaths(){return services.map(service=>({params:{slug:service.id},props:{service}}));}
+const {service}=Astro.props;
+---
+<Layout title={service.title} description={service.intro}><PageIntro title={service.title} eyebrow={service.category} description={service.intro}/><section class="container content-section"><div class="service-detail"><div class="service-description">{service.sections.map(section=><section><h2>{section.title}</h2>{section.text && <p>{section.text}</p>}{section.items && <ul>{section.items.map(item=><li>{item}</li>)}</ul>}{section.link && <a class="text-link" href={section.link} target="_blank" rel="noreferrer">{section.linkLabel} ↗</a>}</section>)}<p class="sources">{service.provided ? "Описание, цена и фотография — из карточки ВКонтакте, предоставленной владельцем проекта 28.09.2026." : <>Описание адаптировано по <a href={service.source} target="_blank" rel="noreferrer">карточке услуги Akusherstvo Club</a>. Фотография — из того же каталога. Проверено 28.09.2026.</>}</p><a class="text-link" href="/services/">← Все услуги</a></div><aside class="service-aside"><ServicePhoto service={service}/><div><p class="eyebrow">{service.duration}</p><strong class="service-price">{service.price}</strong><p class="small">Стоимость по карточке услуги. Итоговую цену и условия подтвердит координатор.</p><a class="button" href="#">Анкета записи на встречу ↗</a><a class="text-link" href="tel:+78006003841">+7 (800) 600-38-41</a></div></aside></div></section><div class="container"><ContactForm/></div></Layout>

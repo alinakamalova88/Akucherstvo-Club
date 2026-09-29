@@ -1,0 +1,6 @@
+---
+const {service,loading='lazy'}=Astro.props;
+const frame=service.frame;
+---
+{frame ? <span class:list={["source-photo",{"portrait-photo":frame.height>frame.width}]} style={`aspect-ratio:${frame.width}/${frame.height}`}><img src={service.image} alt={service.title} loading={loading} width={frame.sourceWidth} height={frame.sourceHeight} style={`position:absolute;max-width:none;width:${frame.sourceWidth/frame.width*100}%;height:${frame.sourceHeight/frame.height*100}%;left:${-frame.x/frame.width*100}%;top:${-frame.y/frame.height*100}%;object-fit:fill;border-radius:0;transform:none;`}/></span> : <img src={service.image} alt={service.title} width="600" height="420" loading={loading}/>}
+

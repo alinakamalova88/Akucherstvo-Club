@@ -1,0 +1,4 @@
+---
+const {title, eyebrow, description}=Astro.props;
+---
+<section class="page-intro container"><div class="breadcrumbs"><a href="/">Главная</a><span> / </span>{title}</div><p class="eyebrow">{eyebrow || 'AKUSHERSTVO CLUB'}</p><h1>{title}</h1><p class="lead">{description}</p></section>
