@@ -1,0 +1,44 @@
+/* Full-width photograph with a readable, warm overlay. */
+.hero.hero-background {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: max(660px, calc(100svh - 110px));
+  padding-block: 72px;
+  overflow: hidden;
+  background: #44463c;
+}
+.hero-background .hero-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+.hero-background::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(31, 38, 31, .84) 0%, rgba(31, 38, 31, .68) 33%, rgba(31, 38, 31, .23) 67%, rgba(31, 38, 31, .08) 100%);
+}
+.hero-background .hero-copy { max-width: 610px; }
+.hero-background h1 { color: #fffaf4; font-size: clamp(38px, 4.4vw, 64px); }
+.hero-background h1 span { color: #f2d9ca; }
+.hero-background .eyebrow,
+.hero-background .hero-description,
+.hero-background .hero-note { color: #fff5eb; }
+.hero-background .status-dot { background: #f2d9ca; }
+.hero-background .hero-note span { color: #f2d9ca; }
+.hero-background .text-link { color: #fff5eb; border-color: #e2c1ac; }
+.hero-background .text-link:hover { color: #f2d9ca; border-color: #f2d9ca; }
+.hero-background a:focus-visible { outline-color: #fff5eb; }
+@media (max-width: 650px) {
+  .hero.hero-background { min-height: calc(100svh - 100px); padding-block: 58px; }
+  .hero-background .hero-backdrop { object-position: 58% center; }
+  .hero-background::before { background: linear-gradient(90deg, rgba(31, 38, 31, .79), rgba(31, 38, 31, .53)); }
+  .hero-background h1 { font-size: clamp(32px, 8.5vw, 45px); }
+  .hero-background .button { max-width: 100%; gap: 16px; padding-inline: 20px; }
+}
