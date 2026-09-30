@@ -1,0 +1,23 @@
+---
+const photos = [
+  { file: 'pregnancy-powder', alt: 'Будущая мама в пудровом платье у светлого окна', caption: 'В ожидании встречи' },
+  { file: 'mother-newborn-sage', alt: 'Мама бережно держит новорождённого на руках', caption: 'Первые объятия' },
+  { file: 'newborn-powder', alt: 'Новорождённый в светлом боди отдыхает в колыбели', caption: 'Знакомство с новым миром' },
+];
+---
+<section class="container section motherhood-gallery" aria-labelledby="motherhood-title">
+  <div class="section-heading"><div><p class="eyebrow">СТОЛЬКО НЕЖНОСТИ ВПЕРЕДИ</p><h2 id="motherhood-title">От ожидания к первым объятиям</h2></div></div>
+  <div class="motherhood-grid">
+    {photos.map(photo => <figure><img src={`/images/${photo.file}.webp`} alt={photo.alt} width="1122" height="1402" loading="lazy" decoding="async"/><figcaption>{photo.caption}</figcaption></figure>)}
+  </div>
+  <p class="image-note">Иллюстрации созданы с помощью ИИ.</p>
+</section>
+<style>
+  .motherhood-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+  figure{margin:0;overflow:hidden;border-radius:28px;background:#f2e4df}
+  figure:nth-child(2){background:#e7ebdf}figure:nth-child(3){background:#e3edf0}
+  img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+  figcaption{padding:20px 22px;font-size:18px;font-weight:500}
+  .image-note{font-size:12px;color:#70645e;margin:16px 0 0}
+  @media(max-width:640px){.motherhood-grid{grid-template-columns:1fr;gap:20px}img{max-height:460px;object-position:center 40%}figcaption{padding:16px 20px}}
+</style>
