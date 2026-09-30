@@ -6,7 +6,7 @@
   min-height: max(660px, calc(100svh - 110px));
   padding-block: 72px;
   overflow: hidden;
-  background: #44463c;
+  background: #f3e5df;
 }
 .hero-background .hero-backdrop {
   position: absolute;
@@ -16,29 +16,30 @@
   height: 100%;
   object-fit: cover;
   object-position: center 42%;
+  filter: brightness(1.08) saturate(.85);
 }
 .hero-background::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, rgba(31, 38, 31, .84) 0%, rgba(31, 38, 31, .68) 33%, rgba(31, 38, 31, .23) 67%, rgba(31, 38, 31, .08) 100%);
+  background: linear-gradient(90deg, rgba(250, 239, 234, .96) 0%, rgba(247, 231, 226, .90) 33%, rgba(244, 221, 217, .38) 67%, rgba(250, 239, 234, .15) 100%);
 }
 .hero-background .hero-copy { max-width: 610px; }
-.hero-background h1 { color: #fffaf4; font-size: clamp(38px, 4.4vw, 64px); }
-.hero-background h1 span { color: #f2d9ca; }
+.hero-background h1 { color: #3e443c; font-size: clamp(38px, 4.4vw, 64px); }
+.hero-background h1 span { color: #935b50; }
 .hero-background .eyebrow,
 .hero-background .hero-description,
-.hero-background .hero-note { color: #fff5eb; }
-.hero-background .status-dot { background: #f2d9ca; }
-.hero-background .hero-note span { color: #f2d9ca; }
-.hero-background .text-link { color: #fff5eb; border-color: #e2c1ac; }
-.hero-background .text-link:hover { color: #f2d9ca; border-color: #f2d9ca; }
-.hero-background a:focus-visible { outline-color: #fff5eb; }
+.hero-background .hero-note { color: #45483f; }
+.hero-background .status-dot { background: #936352; }
+.hero-background .hero-note span { color: #935b50; }
+.hero-background .text-link { color: #45483f; border-color: #936352; }
+.hero-background .text-link:hover { color: #793e2e; border-color: #793e2e; }
+.hero-background a:focus-visible { outline-color: #45483f; }
 @media (max-width: 650px) {
   .hero.hero-background { min-height: calc(100svh - 100px); padding-block: 58px; }
   .hero-background .hero-backdrop { object-position: 58% center; }
-  .hero-background::before { background: linear-gradient(90deg, rgba(31, 38, 31, .79), rgba(31, 38, 31, .53)); }
+  .hero-background::before { background: linear-gradient(90deg, rgba(250, 239, 234, .94), rgba(247, 231, 226, .82)); }
   .hero-background h1 { font-size: clamp(32px, 8.5vw, 45px); }
   .hero-background .button { max-width: 100%; gap: 16px; padding-inline: 20px; }
 }
