@@ -1,4 +1,7 @@
 ---
-const {number,title,text,href,tone='sage'}=Astro.props;
+const {number,title,text,href,tone='sage',heading='h3'}=Astro.props;
+const Heading=heading;
 ---
-<a class:list={['service-card',tone]} href={href}><span class="card-number">{number} /</span><h3>{title}</h3><p>{text}</p><span class="card-link">Узнать больше <span>↗</span></span></a>
+<a class:list={['service-card',tone]} href={href}><span class="card-number">{number} /</span><Heading class="service-card-heading">{title}</Heading><p>{text}</p><span class="card-link">Узнать больше <span>↗</span></span></a>
+
+<style>.service-card-heading{font-size:27px;margin-top:35px}</style>

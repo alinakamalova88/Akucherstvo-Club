@@ -24,4 +24,4 @@ Netlify автоматически соберёт и опубликует каж
 
 Не загружайте ZIP заново через создание нового проекта: это создаёт отдельные сайты. Папки node_modules, dist, .astro и .netlify, а также локальные .env-файлы исключены из Git.
 
-После выбора постоянного адреса замените https://example.ru в astro.config.mjs и public/robots.txt на адрес сайта.
+После выбора постоянного адреса замените https://brilliant-lily-57de5c.netlify.app в astro.config.mjs и public/robots.txt на адрес сайта.

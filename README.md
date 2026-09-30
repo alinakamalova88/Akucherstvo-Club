@@ -14,7 +14,7 @@ npm run dev
 Сборка: `npm run build`. Папка `dist` содержит готовый сайт для статического хостинга.
 Локальный просмотр сборки: `npm run preview`.
 
-Домен в `astro.config.mjs`: `https://example.ru`. Перед публикацией заменить его и адрес Sitemap в `public/robots.txt`.
+Адрес сайта в `astro.config.mjs`: `https://brilliant-lily-57de5c.netlify.app`. При подключении собственного домена обновите его и Sitemap в `public/robots.txt`.
 
 ## Структура и редактирование
 

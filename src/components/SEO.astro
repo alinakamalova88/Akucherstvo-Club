@@ -1,5 +1,21 @@
 ---
 const { title, description } = Astro.props;
+const brandedTitle = title + ' — Akusherstvo Club';
+const pageTitle = brandedTitle.length <= 60 ? brandedTitle : title;
+if (!pageTitle || pageTitle.length > 60 || !description || description.length > 160) {
+  throw new Error('Invalid SEO metadata for ' + Astro.url.pathname);
+}
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const socialImage = new URL('/images/meeting.png', Astro.site);
 ---
-<title>{title} — Akusherstvo Club</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/><meta property="og:title" content={`${title} — Akusherstvo Club`}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={canonical}/><meta property="og:locale" content="ru_RU"/>
+<title>{pageTitle}</title>
+<meta name="description" content={description}/>
+<link rel="canonical" href={canonical}/>
+<meta property="og:title" content={pageTitle}/>
+<meta property="og:description" content={description}/>
+<meta property="og:image" content={socialImage}/>
+<meta property="og:image:alt" content="Встреча будущих мам с доулой, иллюстрация Akusherstvo Club"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content={canonical}/>
+<meta property="og:locale" content="ru_RU"/>
+{Astro.url.pathname === '/404.html' && <meta name="robots" content="noindex, follow"/>}
