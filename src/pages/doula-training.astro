@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageIntro from '../components/PageIntro.astro';
+---
+<Layout title="Обучение на доулу" description="Интересует обучение на доулу? Узнайте, какие вопросы обсудить перед выбором программы, и свяжитесь с координатором Akusherstvo Club.">
+  <PageIntro title="Обучение на доулу" eyebrow="ПОДДЕРЖИВАТЬ. СЛЫШАТЬ. БЫТЬ РЯДОМ." description="Если вам близка бережная поддержка женщины в родах, начните со знакомства с ролью доулы и возможностями обучения."/>
+  <div class="container content-section">
+    <p class="notice">Подробности обучения готовятся к публикации. Программу, формат, стоимость и ближайшие даты уточняйте у координатора клуба.</p>
+    <div class="two-grid">
+      <section class="plain-card">
+        <p class="eyebrow">ЗНАКОМСТВО С ПРОФЕССИЕЙ</p>
+        <h2>Что значит быть доулой</h2>
+        <p>Доула оказывает эмоциональную и практическую поддержку: помогает женщине чувствовать себя услышанной, заботится о комфорте и поддерживает общение с медицинской командой.</p>
+        <p>Эта роль не заменяет врача или акушерку. Доула не назначает лечение и не выполняет медицинские процедуры.</p>
+        <a class="text-link" href="/specialists/doulas/">Подробнее о роли доулы →</a>
+      </section>
+      <section class="plain-card training-details">
+        <p class="eyebrow">ПЕРЕД ВЫБОРОМ ПРОГРАММЫ</p>
+        <h2>О чём спросить</h2>
+        <ul>
+          <li>Кому подходит обучение и нужна ли предварительная подготовка?</li>
+          <li>Какие темы входят в программу и кто ведёт занятия?</li>
+          <li>Есть ли практика, обратная связь и сопровождение наставника?</li>
+          <li>Каковы длительность, расписание, формат и полная стоимость?</li>
+          <li>Какой документ выдаётся и что он подтверждает?</li>
+        </ul>
+        <p class="small">Это вопросы для знакомства с программой, а не перечень подтверждённых условий курса.</p>
+      </section>
+    </div>
+    <section class="contact-band training-contact">
+      <div><p class="eyebrow">ОБСУДИМ ВАШ ИНТЕРЕС</p><h2>Узнайте подробности<br/>у координатора</h2><p>Расскажите, что привело вас к идее стать доулой, и уточните доступную информацию об обучении.</p></div>
+      <div class="training-actions"><a class="button" href="tel:+78006003841">+7 (800) 600-38-41 ↗</a><a class="text-link" href="https://telegram.me/akusherstvo_club_official" target="_blank" rel="noopener noreferrer">Написать в Telegram ↗</a></div>
+    </section>
+  </div>
+</Layout>
+<style>
+  .plain-card h2{font-size:clamp(27px,3vw,35px)}
+  .training-details{background:var(--pink)}
+  .training-details ul{padding-left:20px;color:var(--color-muted)}
+  .training-details li{margin-bottom:12px}
+  .training-contact{margin-top:32px;margin-bottom:0}
+  .training-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px;flex-shrink:0}
+</style>

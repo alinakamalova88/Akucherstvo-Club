@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://brilliant-lily-57de5c.netlify.app/sitemap-index.xml
+Sitemap: https://akucherstvo-club.netlify.app/sitemap-index.xml
