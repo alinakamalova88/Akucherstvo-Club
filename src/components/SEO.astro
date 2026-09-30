@@ -10,6 +10,7 @@ const socialImage = new URL('/images/meeting.png', Astro.site);
 ---
 <title>{pageTitle}</title>
 <meta name="description" content={description}/>
+{Astro.url.pathname === '/' && <meta name="google-site-verification" content="YwBaEEr4DQVO3sq4WcTAUXPcR7gm5bJ0Xwr6GSosiOY" />}
 <link rel="canonical" href={canonical}/>
 <meta property="og:title" content={pageTitle}/>
 <meta property="og:description" content={description}/>
