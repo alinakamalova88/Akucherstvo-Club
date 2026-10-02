@@ -6,11 +6,29 @@ import SEO from '../components/SEO.astro';
 const {title,description}=Astro.props;
 ---
 <!doctype html><html lang="ru"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="theme-color" content="#f8f5ee"/><SEO title={title} description={description}/><link rel="icon" type="image/svg+xml" href="/favicon.svg"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/><link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/></head><body><a class="skip-link" href="#main">К содержимому</a><Header/><main id="main"><slot/></main><Footer/><script is:inline>
-window.chatbaseConfig = { showFloatingInitialMessages: true, floatingInitialMessagesDelay: 3, floatingMessagesOncePerSession: true };
+window.chatbaseConfig = { showFloatingInitialMessages: false, floatingInitialMessagesDelay: 3, floatingMessagesOncePerSession: true };
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="pFb_26aqN0UFCfnYTtSGX";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 window.chatbase.setInitialMessages(['Здравствуйте! Помогу с вопросами о родах и услугах клуба.']);
+// Keep a visible close control outside the third-party iframe.
+const addChatClose = () => {
+  const panel = document.getElementById('chatbase-bubble-window');
+  if (!panel || panel.querySelector('.club-chat-close')) return;
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.className = 'club-chat-close';
+  close.textContent = '× Закрыть';
+  close.setAttribute('aria-label', 'Закрыть диалог помощника');
+  close.addEventListener('click', () => {
+    window.chatbase.close();
+    document.getElementById('chatbase-bubble-button')?.focus();
+  });
+  panel.appendChild(close);
+};
+new MutationObserver(addChatClose).observe(document.body, {childList:true, subtree:true});
+addChatClose();
 </script><style is:global>
-#chatbase-message-bubbles{max-width:min(300px,calc(100vw - 32px)) !important}
+#chatbase-message-bubbles{display:none !important}
+.club-chat-close{position:absolute;top:8px;right:8px;z-index:10;display:block;opacity:1;background:#faf7f2;color:#333c32;border:1px solid #dedfd4;border-radius:20px;padding:10px 14px;font:14px sans-serif;cursor:pointer;min-height:44px}
 #chatbase-message-bubbles > button{opacity:1 !important;pointer-events:auto !important;width:36px !important;height:36px !important;top:-18px !important;right:0 !important;font-size:18px !important}
 #chatbase-bubble-button[aria-expanded="true"]::after{content:"Свернуть";position:absolute;right:64px;bottom:9px;background:#faf7f2;color:#333c32;border-radius:16px;padding:8px 12px;font:14px sans-serif;box-shadow:0 2px 8px #0002}
 @media(max-width:480px){#chatbase-bubble-window{width:calc(100vw - 24px) !important;right:12px !important;left:auto !important;bottom:85px !important;height:min(70dvh,560px) !important;max-height:calc(100dvh - 110px) !important}}
